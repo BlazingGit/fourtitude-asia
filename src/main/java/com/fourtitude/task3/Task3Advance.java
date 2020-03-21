@@ -18,7 +18,6 @@ public class Task3Advance {
 		} catch (Exception e) {
 			System.out.println("Error occured during encryption/decryption.");
 		}
-		
 	}
 	
 	public static String encrypt(String plainText) throws Exception {
@@ -42,6 +41,5 @@ public class Task3Advance {
 		}
 		return new String(xors, "UTF-8");		
 	}
-
 
 }
