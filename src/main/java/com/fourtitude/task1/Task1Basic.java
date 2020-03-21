@@ -14,9 +14,7 @@ public class Task1Basic {
 		principalAmount = 400000;
 		numOfYear = 30;
 		double repaymentAmount = 1500;
-		System.out.println(calculateInterestRate(principalAmount, repaymentAmount, numOfYear) + "%");
-		
-		
+		System.out.println(calculateInterestRate(principalAmount, repaymentAmount, numOfYear) + "%");	
 	}
 	
 	

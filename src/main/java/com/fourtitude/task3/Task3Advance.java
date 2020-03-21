@@ -1,16 +1,22 @@
 package com.fourtitude.task3;
 
 import java.util.Base64;
+import java.util.Scanner;
 
 public class Task3Advance {
 	public static void main(String[] args) {
-		String input = "haha";
 		try {
-			String encrypt = encrypt(input);
-			
-			decrypt(encrypt);
+			System.out.println("Enter a string to be encrypted: ");
+			Scanner scanner = new Scanner(System.in);
+			String input = scanner.nextLine();
+			System.out.println("Entered string: " + input);
+			String encrypted = encrypt(input);
+			System.out.println("String after encryption: " + encrypted);
+			String decrypted = decrypt(encrypted);
+			System.out.println("String after decryption: " + decrypted);
+			scanner.close();
 		} catch (Exception e) {
-			System.out.println("Error during encryption/decryption.");
+			System.out.println("Error occured during encryption/decryption.");
 		}
 		
 	}
@@ -23,32 +29,18 @@ public class Task3Advance {
 		for (int ix = 0; ix < len; ix += 1) {
 			xors[ix] = (byte) ((int) bytes[ix] ^ ((int) lcg.next()));
 		}
-		
-		String encry = new String(java.util.Base64.getEncoder().encode(xors), "UTF-8");
-		
-		byte[] aa = Base64.getEncoder().encode(xors);
-		System.out.println(java.util.Base64.getEncoder().encode(xors));
-		System.out.println(encry.getBytes("UTF-8"));
-		
-		return encry;
-//		return new String(java.util.Base64.getEncoder().encode(xors), "UTF-8");
+		return new String(java.util.Base64.getEncoder().encode(xors), "UTF-8");
 	}
 	
 	public static String decrypt(String base64EncodedValue) throws Exception {
 		Lcg lcg = new Lcg(256, 11, 1, 0);
-		byte[] decodedByte = Base64.getDecoder().decode(base64EncodedValue.getBytes("UTF-8"));
-//		System.out.println(decodedByte);
-//		System.out.println(base64EncodedValue.getBytes("UTF-8"));
+		byte[] decodedByte = Base64.getDecoder().decode(base64EncodedValue.getBytes("UTF-8"));		
 		int len = decodedByte.length;
-		byte[] newXors = new byte[len];
+		byte[] xors = new byte[len];
 		for (int ix = 0; ix < len; ix += 1) {
-			newXors[ix] = (byte) ((int) decodedByte[ix] ^ ((int) lcg.next()));
+			xors[ix] = (byte) ((int) decodedByte[ix] ^ ((int) lcg.next()));
 		}
-		
-		return (new String(newXors, "UTF-8"));
-		
-		
-//	    throw new UnsupportedOperationException("TODO: to be implemented");
+		return new String(xors, "UTF-8");		
 	}
 
 
