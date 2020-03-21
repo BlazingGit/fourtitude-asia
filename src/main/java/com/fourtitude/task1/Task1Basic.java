@@ -9,7 +9,7 @@ public class Task1Basic {
 		double percentageRate = 4.45;
 		int numOfYear = 30;
 		
-		System.out.println("RM " + calculateRepayment(principalAmount, percentageRate, numOfYear));
+		System.out.println("Monthly Repayment is RM " + calculateRepayment(principalAmount, percentageRate, numOfYear));
 	}
 		
 	public static String calculateRepayment(double principalAmount, double percentageRate, int numOfYear) {
