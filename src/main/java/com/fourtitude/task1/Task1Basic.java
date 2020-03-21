@@ -12,7 +12,7 @@ public class Task1Basic {
 		System.out.println("Monthly Repayment is RM " + calculateRepayment(principalAmount, percentageRate, numOfYear));
 	}
 		
-	public static String calculateRepayment(double principalAmount, double percentageRate, int numOfYear) {
+	private static String calculateRepayment(double principalAmount, double percentageRate, int numOfYear) {
 		DecimalFormat df = new DecimalFormat("0.00");
 		int numOfPayment = numOfYear * 12;
 		double ratePerPeriod = percentageRate / 100 / 12;

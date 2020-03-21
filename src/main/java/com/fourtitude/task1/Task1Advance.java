@@ -10,7 +10,7 @@ public class Task1Advance {
 		System.out.println("Interest Rate is " + calculateInterestRate(principalAmount, repaymentAmount, numOfYear));
 	}
 		
-	public static String calculateInterestRate(double principalAmount, double repaymentAmount, int numOfYear) {
+	private static String calculateInterestRate(double principalAmount, double repaymentAmount, int numOfYear) {
 		return "2.1%";
 	}
 		

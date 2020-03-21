@@ -16,7 +16,7 @@ public class Task2 {
 	}
 	
 	
-	public static void checkDistribution() {
+	private static void checkDistribution() {
 		HashMap<Integer, Integer> tallyMap = new HashMap<Integer, Integer>();
 		for(int i = 0; i <= 9; i++) {
 			tallyMap.put(i, 0);
