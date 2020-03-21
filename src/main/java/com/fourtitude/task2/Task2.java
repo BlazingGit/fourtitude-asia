@@ -7,14 +7,15 @@ public class Task2 {
 	public static void main(String[] args) {	
 		// Basic
 		int basicCheckDigit = Task2Util.findCheckDigit("98062477123");
+		System.out.println("--- Basic ---");
 		System.out.println("The check digit for the value '98062477123' is " + basicCheckDigit);
 		
 		System.out.println("");
 		
 		// Advance
+		System.out.println("--- Advance ---");
 		checkDistribution();
 	}
-	
 	
 	private static void checkDistribution() {
 		HashMap<Integer, Integer> tallyMap = new HashMap<Integer, Integer>();
